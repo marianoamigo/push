@@ -14,6 +14,11 @@ public class PushController {
 
     @Autowired
     PushService pushService;
+
+    @GetMapping("/home")
+    public String home() {
+        return "Microservicio de Push operativo 🚀";
+    }
     @PostMapping("/send")
     public ResponseEntity<?> send(@RequestBody NotificationDTO notification) throws ErrorService {
         pushService.send(notification);
